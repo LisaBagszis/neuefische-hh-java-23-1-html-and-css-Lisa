@@ -1,16 +1,4 @@
-/*const valueA : string =  "Hello World"
-const valueB : number = 13.05
-const valueC : boolean = true
 
-//System.out.println()
-console.log(valueA)
-console.log(valueB)
-
-
-function add( a : number, b : number) : number {
-    return a + b
-}
-console.log(add(4 , 5))*/
 
 const students =
     [
@@ -19,19 +7,33 @@ const students =
         {name: "Susanne", id: "3"},
     ];
 
-const Id = "1";
+
 function findStudentAndUpdateName(student) {
-    if (Id == student.id) {
-        return { name: "Mario", id: Id};
+    if (student.id === "1") {
+        return { name: "Mario", id: "1"};
     }
     return student
 }
-const newStudents = students.map(findStudentAndUpdateName);
-console.log(students);
-console.log(newStudents);
 
+function replace(students: Student[],  name: string, id: string): Student[] {
+    return students.map(findStudentAndUpdateName)
+}
 
+console.log(replace(students, "Michael", "4"))
+console.log(students)
 
+//funktions-name Parameter:(variabel-name : type,      variabel-name: type,variabel-name: type): RückgabeType            { Body }
+function replaceArrow(students: Student[], name: string, id: string): Student[] {
+    return students.map((student) => {
+        if (student.id === id) {
+            return {id: id, name: name}
+        }
+        return student
+    })
+}
+
+console.log(replaceArrow(students, "Michael", "4"))
+type Student = {id: string, name: string}
 
 
 
