@@ -1,0 +1,42 @@
+
+h1 {
+    font-size:40px;
+    font-family: "Dancing-Script";
+    color: #60441b;
+}
+h2 {
+    color: #503713;
+
+}
+div {
+    color: blue;
+}
+.rechtsbuendig {
+    text-align: right;
+}
+ body {
+    background-color: #7ca674;
+}
+ .link {
+     font-size: 30px;
+     color: #262626;
+ }
+ .kleiner {
+     font-size:12px;
+ }
+ .nochkleiner {
+     font-size: 10px;
+ }
+.animate__animated {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
