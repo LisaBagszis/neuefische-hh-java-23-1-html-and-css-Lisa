@@ -670,29 +670,26 @@ var characters = {
         }
     ]
 };
-function findCharacterWhoAreAlive(character) {
-    if (character.status === "Alive" && character.species === "Human") {
-        return true;
-    }
-    else {
-        return false;
-    }
+console.log(giveCharactersWhoAreAliveBack(characters.results));
+console.log(giveCharacterNamesBack(characters.results));
+console.log(giveNameAndOriginAsObjectsBack(characters.results));
+function giveCharactersWhoAreAliveBack(characters) {
+    return characters.filter(function (character) {
+        if (character.status === "Alive" && character.species === "Human") {
+            return true;
+        }
+        else {
+            return false;
+        }
+    });
 }
-function giveCharacterNamesBack(character) {
-    return character.name;
+function giveCharacterNamesBack(characters) {
+    return characters.map(function (character) {
+        return character.name;
+    });
 }
-function giveNameAndOriginBack(character) {
-    return { name: character.name, origin: character.origin.name };
+function giveNameAndOriginAsObjectsBack(characters) {
+    return characters.map(function (character) {
+        return { name: character.name, origin: character.origin.name };
+    });
 }
-function giveCharactersBack(characters) {
-    return characters.filter(findCharacterWhoAreAlive);
-}
-function giveNamesBack(characters) {
-    return characters.map(giveCharacterNamesBack);
-}
-function giveObjectsBack(characters) {
-    return characters.map(giveNameAndOriginBack);
-}
-console.log(giveCharactersBack(characters.results));
-console.log(giveNamesBack(characters.results));
-console.log(giveObjectsBack(characters.results));
